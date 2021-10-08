@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../models/user';
 
 @Component({
@@ -12,9 +13,11 @@ export class ListUserComponent implements OnInit {
   prop3="test3";
   searchVal="";
   list : User[];
-  constructor() { }
+  listIn: User[];
+  constructor(private ac:ActivatedRoute) { }
 
   ngOnInit(): void {
+    
       this.list=[
         {
           idCustomer: 1,
@@ -73,6 +76,15 @@ export class ListUserComponent implements OnInit {
         }
   
   ]
+this.listIn=this.list;
+  this.ac.paramMap.subscribe(
+    res=>{
+      console.log(res.get('cat')),
+      this.list=this.listIn.filter((user) =>{
+        return user.accountCategory === res.get('cat');//return user.accountCategory === res.get('category')  ;
+     })
+  }
+)
   
   }
   getUserCategory(c:string){
