@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../models/user';
 
 @Component({
@@ -12,7 +13,7 @@ export class ListuserComponent implements OnInit {
    prop2="testngmodel";
    prop3="test";
    searchval="";
-  constructor() { }
+  constructor(private ac:ActivatedRoute) { }
   getVal(val:string){
   
     this.prop1=val;
@@ -20,6 +21,8 @@ export class ListuserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.ac.paramMap.subscribe(
+      res=>console.log(res.get('cat')));
     this.list=[
       {
         idCustomer: 1,
