@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddFormComponent } from './add-form/add-form.component';
+import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { HomeComponent } from './home/home.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ListUserComponent } from './list-user/list-user.component';
@@ -21,6 +23,7 @@ const routes: Routes = [
   {path:"maininvoice", component:MainInvoiceComponent},
   //{path:"invoice/:id/:active", component:InvoiceComponent},
   {path:"invoice", component:InvoiceComponent},
+  {path:"addProduct", component:AddProductTDComponent},
 
   {path:"**", component:NotFoundPageComponent}
 ];

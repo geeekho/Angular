@@ -1,0 +1,113 @@
+<p>Template Driven</p>
+
+<form>
+  <section ngForm #section1="ngForm">
+    <!--Id Produit-->
+    <div class="form-group" >
+      <label for="idProd">Id Produit</label>
+      <input type="text" required ngModel #idProd="ngModel" class="form-control" id="idProd" name="idProd">
+      <div *ngIf="idProd.errors && idProd.touched && idProd.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="idProd.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <!--Code-->
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" pattern="[a-zA-Z-0-9]{8}" required minlength=8 maxlength=8 ngModel #code="ngModel"
+        class="form-control" name="code" id="code">
+
+      <div *ngIf="code.errors && code.touched && code.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="code.errors.pattern">
+          il faut écrire que des lettres/chiffres
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="code.errors.required">
+          Champ obligatoire
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="code.errors.minlength">
+          {{code.errors.minlength.actualLength}} Minimum {{code.errors.minlength.requiredLength}} caractères
+        </div>
+      </div>
+    </div>
+    <!--Libelle-->
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input type="text" pattern="[a-zA-Z-0-9]{3}" required minlength=3 ngModel #libelle="ngModel" class="form-control" id="libelle" name="libelle">
+      <div *ngIf="libelle.errors && libelle.touched && libelle.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="libelle.errors.pattern">
+          il faut écrire que des lettres/chiffres
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="libelle.errors.required">
+          Champ obligatoire
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="libelle.errors.minlength">
+          {{libelle.errors.minlength.actualLength}} Minimum {{libelle.errors.minlength.requiredLength}} caractères
+        </div>
+      </div>
+    </div>
+    <!--prixU-->
+    <div class="form-group">
+      <label for="prixU">Prix Unitaire</label>
+      <input type="text" pattern="[1-9][0-9]*" required ngModel #prixU="ngModel" class="form-control" id="prixU" name="prixU">
+      <div *ngIf="prixU.errors && prixU.touched && prixU.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="prixU.errors.pattern">
+          il faut écrire que des chiffres
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="prixU.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" [hidden] ="section1.valid" [disabled] ="section1.invalid">Next</button>
+  </section>
+  <section ngForm #section2="ngForm" [hidden] ="section1.invalid" >
+    <!--idDetProd-->
+    <div class="form-group">
+      <label for="idDetProd">Id details produit</label>
+      <input type="text" required ngModel #idDetProd="ngModel" class="form-control" id="idDetProd" name="idDetProd">
+      <div *ngIf="idDetProd.errors && idDetProd.touched && idDetProd.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="idDetProd.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <!--datecr-->
+    <div class="form-group">
+      <label for="datecr">Date creation</label>
+      <input type="date" required ngModel #datecr="ngModel" class="form-control" id="datecr" name="datecr">
+      <div *ngIf="datecr.errors && datecr.touched && datecr.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="datecr.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <!--datemodif-->
+    <div class="form-group" [hidden]="datecr.invalid">
+      <label for="datemodif">Date derniere modification</label>
+      <input type="date" required ngModel #datemodif="ngModel" class="form-control" id="datemodif" name="datemodif">
+      <div *ngIf="datemodif.errors && datemodif.touched && datemodif.invalid">
+        <div class="alert alert-danger" role="alert" *ngIf="datemodif.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <!--selectCateg-->
+    <div class="form-group">
+      <label for="selectCateg">Catégorie produit</label>
+      <select required ngModel #selectCateg="ngModel" class="form-select" id="selectCateg">
+        <option value="">Select value</option>
+        <option value="Electromenager">Electromenager</option>
+        <option selected="true" value="Alimentaire">Alimentaire</option>
+        <option value="Quincaillerie">Quincaillerie</option>
+      </select>
+      <div *ngIf="selectCateg.errors && selectCateg.touched && selectCateg.invalid">
+        {{selectCateg.valid}}
+        <div class="alert alert-danger" role="alert" *ngIf="selectCateg.errors.required">
+          Champ obligatoire
+        </div>
+      </div>
+    </div>
+    <button type="submit" [hidden]="section2.invalid" class="btn btn-primary">Submit</button>
+  </section>
+</form>
