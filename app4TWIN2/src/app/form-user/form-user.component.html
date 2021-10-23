@@ -1,4 +1,4 @@
-<p>Template Driven</p>
+<p>reactive Form</p>
 
 <form>
   <section ngForm #section1="ngForm">
@@ -102,6 +102,7 @@
         <option value="Quincaillerie">Quincaillerie</option>
       </select>
       <div *ngIf="selectCateg.errors && selectCateg.touched && selectCateg.invalid">
+        {{selectCateg.valid}}
         <div class="alert alert-danger" role="alert" *ngIf="selectCateg.errors.required">
           Champ obligatoire
         </div>

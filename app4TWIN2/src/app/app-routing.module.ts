@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddFormComponent } from './add-form/add-form.component';
+import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
+import { FormUserComponent } from './form-user/form-user.component';
 import { HomeComponent } from './home/home.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ListUserComponent } from './list-user/list-user.component';
@@ -16,14 +18,19 @@ const routes: Routes = [
   {path:"", redirectTo:"home", pathMatch:"full"},
   {path:"home", component:HomeComponent},
   {path:"mainuser", component:MainUserComponent, children:[
-    {path:"listuser/:cat", component:ListUserComponent}
+    {path:"listuser/:cat", component:ListUserComponent},
+    {path:"addUser", component:FormUserComponent}
   ]},
   {path:"mainproduct", component:MainProductComponent},
   {path:"mainprovider", component:MainProviderComponent},
   {path:"maininvoice", component:MainInvoiceComponent},
   //{path:"invoice/:id/:active", component:InvoiceComponent},
   {path:"invoice", component:InvoiceComponent},
-  {path:"addProduct", component:AddProductTDComponent},
+  {path:"product", component:MainProductComponent, children:[
+    {path:"addTD", component:AddProductTDComponent},
+    {path:"addRF", component:AddProductRFComponent},
+
+  ]},
 
   {path:"**", component:NotFoundPageComponent}
 ];

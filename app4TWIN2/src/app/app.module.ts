@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { TestComponent } from './test/test.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainUserComponent } from './main-user/main-user.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import { MainProviderComponent } from './main-provider/main-provider.component';
@@ -19,6 +19,8 @@ import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
+import { FormUserComponent } from './form-user/form-user.component';
+import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,15 @@ import { AddProductTDComponent } from './add-product-td/add-product-td.component
     InvoiceListComponent,
     InvoiceComponent,
     AddFormComponent,
-    AddProductTDComponent
+    AddProductTDComponent,
+    FormUserComponent,
+    AddProductRFComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
