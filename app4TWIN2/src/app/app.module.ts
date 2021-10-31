@@ -21,6 +21,10 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
+import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { AddProductRFComponent } from './add-product-rf/add-product-rf.component
     AddFormComponent,
     AddProductTDComponent,
     FormUserComponent,
-    AddProductRFComponent
+    AddProductRFComponent,
+    ParentComponent,
+    ChildComponent,
+    AddInvoiceComponent,
+    EditInvoiceComponent
   ],
   imports: [
     BrowserModule,

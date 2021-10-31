@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Invoice } from '../models/invoice';
 
 @Component({
@@ -6,11 +6,18 @@ import { Invoice } from '../models/invoice';
   templateUrl: './invoice-list.component.html',
   styleUrls: ['./invoice-list.component.css']
 })
-export class InvoiceListComponent implements OnInit {
+export class InvoiceListComponent implements OnInit, OnChanges {
 
   list: Invoice[]
+  invoice : Invoice = null
+  hidden : boolean
 
-  constructor() { }
+  constructor() { 
+    this.hidden = true
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+
+  }
 
   ngOnInit(): void {
     this.list = [{
@@ -44,4 +51,33 @@ export class InvoiceListComponent implements OnInit {
   ]
   }
 
+  delete(invoice : Invoice){
+    const index: number = this.list.indexOf(invoice);
+    if (index !== -1) {
+        this.list.splice(index, 1);
+    }
+    this.invoice = null
+
+  }
+
+  sendData(value : Invoice){
+    this.invoice = null
+    this.list[this.list.findIndex(invoice => invoice.idFacture === value.idFacture)] = value;
+
+  }
+
+  addData(value : Invoice){
+    this.list.push(value)
+  }
+
+  setInvoice(invoice : Invoice){
+    this.hidden = true
+    this.invoice = invoice
+  }
+
+  toggleAdd(){
+    this.hidden = !this.hidden
+    console.log(this.hidden)
+    this.invoice = null
+  }
 }

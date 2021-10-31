@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddFormComponent } from './add-form/add-form.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
+import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { HomeComponent } from './home/home.component';
 import { InvoiceComponent } from './invoice/invoice.component';
@@ -23,7 +25,9 @@ const routes: Routes = [
   ]},
   {path:"mainproduct", component:MainProductComponent},
   {path:"mainprovider", component:MainProviderComponent},
-  {path:"maininvoice", component:MainInvoiceComponent},
+  {path:"maininvoice", component:MainInvoiceComponent, children:[
+    {path:"add", component:AddInvoiceComponent}
+  ]},
   //{path:"invoice/:id/:active", component:InvoiceComponent},
   {path:"invoice", component:InvoiceComponent},
   {path:"product", component:MainProductComponent, children:[

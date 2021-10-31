@@ -1,0 +1,59 @@
+<form [formGroup]="FGEdtFct" (ngSubmit)="onSubmit()">
+    <!--id Facture-->
+    <div class="form-group">
+      <label for="idFacture">id Facture</label>
+      <input readonly type="text" formControlName="idFacture" class="form-control">
+    </div>
+    <div
+      *ngIf="FGEdtFct.get('idFacture').errors && FGEdtFct.get('idFacture').touched && FGEdtFct.get('idFacture').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('idFacture').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('idFacture').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <!--montant Facture-->
+    <div class="form-group">
+      <label for="montantFacture">montant Facture</label>
+      <input type="text" formControlName="montantFacture" class="form-control" id="montantFacture">
+    </div>
+    <div
+      *ngIf="FGEdtFct.get('montantFacture').errors && FGEdtFct.get('montantFacture').touched && FGEdtFct.get('montantFacture').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('montantFacture').errors?.pattern">
+        Le code doit contenir 8 caractères
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('montantFacture').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('montantFacture').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <!--montant Remise-->
+    <div class="form-group">
+      <label for="montantRemise">montant Remise</label>
+      <input type="text" formControlName="montantRemise" class="form-control" id="montantRemise">
+    </div>
+    <div
+      *ngIf="FGEdtFct.get('montantRemise').errors && FGEdtFct.get('montantRemise').touched && FGEdtFct.get('montantRemise').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('montantRemise').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('montantRemise').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <!--date Facture-->
+    <div class="form-group">
+      <label for="dateFacture">date Facture</label>
+      <input type="text" formControlName="dateFacture" class="form-control" id="dateFacture">
+    </div>
+    <div
+      *ngIf="FGEdtFct.get('dateFacture').errors && FGEdtFct.get('dateFacture').touched && FGEdtFct.get('dateFacture').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGEdtFct.get('dateFacture').errors?.required">
+        Champ obligatoire
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="FGEdtFct.invalid">Confirm</button>
+</form>

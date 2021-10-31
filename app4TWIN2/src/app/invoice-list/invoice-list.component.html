@@ -1,7 +1,29 @@
 <ul *ngFor="let item of list" class="list-group">
-    <li class="list-group-item">Facture {{item.idFacture}} : <a [routerLink]="['/invoice']" [queryParams]="{ id:item.idFacture , active:item.active}">Details</a></li>
-    <!-- 
-        PathParam
-        <li class="list-group-item">Facture {{item.idFacture}} : <a [routerLink]="['/invoice', item.idFacture,item.active]">Details</a></li>
-     -->
+  <li class="list-group-item">Facture {{item.idFacture}} : <a [routerLink]="['/invoice']"
+      [queryParams]="{ id:item.idFacture , active:item.active}">Details</a>
+    <div style="float: right;">
+      <!-- Call to action buttons -->
+      <ul class="list-inline m-0">
+
+        <li class="list-inline-item">
+          <button (click)="setInvoice(item)" class="btn btn-success btn-sm rounded-0" type="button"
+            data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+        </li>
+        <li class="list-inline-item">
+          <button (click)="delete(item)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+            data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+        </li>
+      </ul>
+    </div>
+  </li>
 </ul>
+<li class="list-inline-item">
+  <button (click)="toggleAdd()" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top"
+    title="Add">Add <i class="fa fa-table"></i></button>
+</li>
+<section *ngIf="invoice!=null">
+  <app-edit-invoice [invoice]="invoice" (notify)="sendData($event)"></app-edit-invoice>
+</section>
+<section *ngIf="!hidden">
+  <app-add-invoice (notify)="addData($event)"></app-add-invoice>
+</section>
