@@ -1,0 +1,6 @@
+<app-show-one-provider (notifyFilter)="getfilter($event)" [ListProviders] ="filteredListProviders" (notifyDel)="updateList($event)"></app-show-one-provider>
+<li class="list-inline-item">
+    <button (click)="toggleAdd()" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top"
+      title="Add">Add <i class="fa fa-table"></i></button>
+  </li>
+<app-add-provider (notifyAdd)="addItem($event)" *ngIf="showAdd"></app-add-provider>

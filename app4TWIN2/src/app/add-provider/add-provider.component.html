@@ -1,0 +1,48 @@
+<form [formGroup]="FGAddPrvd" (ngSubmit)="onSubmit()">
+    <!--id Provider-->
+    <div class="form-group">
+      <label for="idProvider">id Provider</label>
+      <input type="text" formControlName="idProvider" class="form-control">
+    </div>
+    <div
+      *ngIf="FGAddPrvd.get('idProvider').errors && FGAddPrvd.get('idProvider').touched && FGAddPrvd.get('idProvider').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('idProvider').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('idProvider').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <!--Code-->
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" formControlName="code" class="form-control" id="code">
+    </div>
+    <div
+      *ngIf="FGAddPrvd.get('code').errors && FGAddPrvd.get('code').touched && FGAddPrvd.get('code').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('code').errors?.pattern">
+        Le code doit contenir 8 caractères
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('code').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('code').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <!--libelle-->
+    <div class="form-group">
+      <label for="libelle">libelle</label>
+      <input type="text" formControlName="libelle" class="form-control" id="libelle">
+    </div>
+    <div
+      *ngIf="FGAddPrvd.get('libelle').errors && FGAddPrvd.get('libelle').touched && FGAddPrvd.get('libelle').invalid">
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('libelle').errors?.required">
+        Champ obligatoire
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="FGAddPrvd.get('libelle').errors?.pattern">
+        Le code doit contenir que des chiffres
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="FGAddPrvd.invalid">Confirm</button>
+</form>

@@ -1,0 +1,24 @@
+<h3>Providers</h3>
+<!--Search-->
+<div class="form-group">
+  <label for="Search">Search</label>
+  <input type="text" class="form-control" id="Search" placeholder="Search..." [formControl]="filter">
+</div>
+<ul *ngFor="let item of ListProviders" class="list-group">
+    <li class="list-group-item">
+        <div>
+            <p>{{item.libelle}} <caption>{{item.code}}</caption></p>
+        </div>
+      <div style="float: right;">
+        <!-- Call to action buttons -->
+        <ul class="list-inline m-0">
+          <li class="list-inline-item">
+            <button (click)="delete(item)" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip"
+              data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  
+  

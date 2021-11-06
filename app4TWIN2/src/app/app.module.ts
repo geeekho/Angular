@@ -25,6 +25,9 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
+import { ListProviderComponent } from './list-provider/list-provider.component';
+import { ShowOneProviderComponent } from './show-one-provider/show-one-provider.component';
+import { AddProviderComponent } from './add-provider/add-provider.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
     ParentComponent,
     ChildComponent,
     AddInvoiceComponent,
-    EditInvoiceComponent
+    EditInvoiceComponent,
+    ListProviderComponent,
+    ShowOneProviderComponent,
+    AddProviderComponent
   ],
   imports: [
     BrowserModule,
