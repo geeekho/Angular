@@ -1,0 +1,6 @@
+<div class="form-group">
+    <label for="Search">TND to Euro</label>
+    <input type="number" class="form-control" id="Search" placeholder="TND" [formControl]="convertValue">
+  </div>
+  <app-to-euro-convert  (euroValue)="storeValue($event)" [amount]="amount"></app-to-euro-convert>
+  <app-conversion-list [convertedList]="convertedList"></app-conversion-list>

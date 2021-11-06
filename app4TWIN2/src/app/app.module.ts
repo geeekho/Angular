@@ -30,6 +30,9 @@ import { ShowOneProviderComponent } from './show-one-provider/show-one-provider.
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ErrorComponent } from './error/error.component';
+import { ConvertisseurComponent } from './convertisseur/convertisseur.component';
+import { ToEuroConvertComponent } from './to-euro-convert/to-euro-convert.component';
+import { ConversionListComponent } from './conversion-list/conversion-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { ErrorComponent } from './error/error.component';
     ShowOneProviderComponent,
     AddProviderComponent,
     AddUserComponent,
-    ErrorComponent
+    ErrorComponent,
+    ConvertisseurComponent,
+    ToEuroConvertComponent,
+    ConversionListComponent
   ],
   imports: [
     BrowserModule,

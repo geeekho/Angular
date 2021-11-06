@@ -4,6 +4,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { AddProductRFComponent } from './add-product-rf/add-product-rf.component';
 import { AddProductTDComponent } from './add-product-td/add-product-td.component';
+import { ConvertisseurComponent } from './convertisseur/convertisseur.component';
 import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
 
   ]},
 
+  {path:"converter", component:ConvertisseurComponent},
   {path:"**", component:NotFoundPageComponent}
 ];
 
