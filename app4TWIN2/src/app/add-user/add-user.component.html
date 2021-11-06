@@ -1,0 +1,75 @@
+<form [formGroup]="FGAddUsr" (ngSubmit)="onSubmit()">
+    <!--id Provider-->
+    <div class="form-group">
+      <label for="idCustomer">id Customer</label>
+      <input type="text" formControlName="idCustomer" class="form-control">
+    </div>
+    <app-error [error]="FGAddUsr.get('idCustomer').errors"
+      *ngIf="FGAddUsr.get('idCustomer').errors && FGAddUsr.get('idCustomer').touched && FGAddUsr.get('idCustomer').invalid">
+    </app-error>
+    <!--firstName-->
+    <div class="form-group">
+      <label for="firstName">first Name</label>
+      <input type="text" formControlName="firstName" class="form-control" id="firstName">
+    </div>
+    <app-error [error]="FGAddUsr.get('firstName').errors"
+      *ngIf="FGAddUsr.get('firstName').errors && FGAddUsr.get('firstName').touched && FGAddUsr.get('firstName').invalid">
+    </app-error>
+    <!--lastName-->
+    <div class="form-group">
+      <label for="lastName">last Name</label>
+      <input type="text" formControlName="lastName" class="form-control" id="lastName">
+    </div>
+    <app-error [error]="FGAddUsr.get('lastName').errors"
+      *ngIf="FGAddUsr.get('lastName').errors && FGAddUsr.get('lastName').touched && FGAddUsr.get('lastName').invalid">
+    </app-error>
+    <!--birthDate-->
+    <div class="form-group">
+        <label for="birthDate">birth Date</label>
+        <input type="date" formControlName="birthDate" class="form-control" id="birthDate">
+      </div>
+    <app-error [error]="FGAddUsr.get('birthDate').errors"
+        *ngIf="FGAddUsr.get('birthDate').errors && FGAddUsr.get('birthDate').touched && FGAddUsr.get('birthDate').invalid">
+    </app-error>
+    <!--email-->
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" formControlName="email" class="form-control" id="email">
+    </div>
+    <app-error [error]="FGAddUsr.get('email').errors"
+        *ngIf="FGAddUsr.get('email').errors && FGAddUsr.get('email').touched && FGAddUsr.get('email').invalid">
+    </app-error>
+    <!--password-->
+    <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" formControlName="password" class="form-control" id="password">
+    </div>
+    <app-error [error]="FGAddUsr.get('password').errors"
+        *ngIf="FGAddUsr.get('password').errors && FGAddUsr.get('password').touched && FGAddUsr.get('password').invalid">
+    </app-error>
+    <!--profession-->
+    <div class="form-group">
+        <label for="profession">profession</label>
+        <input type="text" formControlName="profession" class="form-control" id="profession">
+    </div>
+    <app-error [error]="FGAddUsr.get('profession').errors"
+        *ngIf="FGAddUsr.get('profession').errors && FGAddUsr.get('profession').touched && FGAddUsr.get('profession').invalid">
+    </app-error>
+    <!--accountCategory-->
+    <div class="form-group">
+        <label for="accountCategory">account Category</label>
+        <input type="text" formControlName="accountCategory" class="form-control" id="accountCategory">
+    </div>
+    <app-error [error]="FGAddUsr.get('accountCategory').errors"
+        *ngIf="FGAddUsr.get('accountCategory').errors && FGAddUsr.get('accountCategory').touched && FGAddUsr.get('accountCategory').invalid">
+    </app-error>
+    <!--picture-->
+    <div class="form-group">
+        <label for="picture">picture</label>
+        <input type="text" formControlName="picture" class="form-control" id="picture">
+    </div>
+    <app-error [error]="FGAddUsr.get('picture').errors"
+        *ngIf="FGAddUsr.get('picture').errors && FGAddUsr.get('picture').touched && FGAddUsr.get('picture').invalid">
+    </app-error>
+    <button class="btn btn-primary" [disabled]="FGAddUsr.invalid">Confirm</button>
+</form>

@@ -28,6 +28,8 @@ import { EditInvoiceComponent } from './edit-invoice/edit-invoice.component';
 import { ListProviderComponent } from './list-provider/list-provider.component';
 import { ShowOneProviderComponent } from './show-one-provider/show-one-provider.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
     EditInvoiceComponent,
     ListProviderComponent,
     ShowOneProviderComponent,
-    AddProviderComponent
+    AddProviderComponent,
+    AddUserComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
