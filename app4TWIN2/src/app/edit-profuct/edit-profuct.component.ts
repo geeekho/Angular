@@ -61,7 +61,9 @@ export class EditProfuctComponent implements OnInit {
   onSubmit() {
     this.product = this.FGEdtPrd.getRawValue()
     this.ps.updateProduct(this.product.id, this.product).subscribe(res => {
-      this.router.navigateByUrl('/products')
+      this.router.navigateByUrl('/',{skipLocationChange: true}).then(()=>{
+        this.router.navigate(['/products'])
+      })
     });
   }
 

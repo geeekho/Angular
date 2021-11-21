@@ -76,7 +76,7 @@
   "products": [
     {
       "id": 1,
-      "code": 127,
+      "code": "128",
       "libelle": "PC1",
       "prixUnitaire": 2000,
       "tauxTVA": 10
