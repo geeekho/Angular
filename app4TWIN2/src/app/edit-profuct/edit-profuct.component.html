@@ -1,0 +1,43 @@
+<form [formGroup]="FGEdtPrd" (ngSubmit)="onSubmit()">
+    <!--id-->
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" formControlName="id" class="form-control">
+    </div>
+    <app-error [error]="FGEdtPrd.get('id').errors"
+      *ngIf="FGEdtPrd.get('id').errors && FGEdtPrd.get('id').touched && FGEdtPrd.get('id').invalid">
+    </app-error>
+    <!--code-->
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" formControlName="code" class="form-control">
+    </div>
+    <app-error [error]="FGEdtPrd.get('code').errors"
+      *ngIf="FGEdtPrd.get('code').errors && FGEdtPrd.get('code').touched && FGEdtPrd.get('code').invalid">
+    </app-error>
+    <!--libelle-->
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input type="text" formControlName="libelle" class="form-control" id="libelle">
+    </div>
+    <app-error [error]="FGEdtPrd.get('libelle').errors"
+      *ngIf="FGEdtPrd.get('libelle').errors && FGEdtPrd.get('libelle').touched && FGEdtPrd.get('libelle').invalid">
+    </app-error>
+    <!--prixUnitaire-->
+    <div class="form-group">
+      <label for="prixUnitaire">Prix Unitaire</label>
+      <input type="number" formControlName="prixUnitaire" class="form-control" id="prixUnitaire">
+    </div>
+    <app-error [error]="FGEdtPrd.get('prixUnitaire').errors"
+      *ngIf="FGEdtPrd.get('prixUnitaire').errors && FGEdtPrd.get('prixUnitaire').touched && FGEdtPrd.get('prixUnitaire').invalid">
+    </app-error>
+    <!--tauxTVA-->
+    <div class="form-group">
+        <label for="tauxTVA">Taux TVA</label>
+        <input type="number" formControlName="tauxTVA" class="form-control" id="tauxTVA">
+      </div>
+    <app-error [error]="FGEdtPrd.get('tauxTVA').errors"
+        *ngIf="FGEdtPrd.get('tauxTVA').errors && FGEdtPrd.get('tauxTVA').touched && FGEdtPrd.get('tauxTVA').invalid">
+    </app-error>
+    <button class="btn btn-primary" [disabled]="FGEdtPrd.invalid">Confirm</button>
+</form>

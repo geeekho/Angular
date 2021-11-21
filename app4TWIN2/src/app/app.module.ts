@@ -33,6 +33,11 @@ import { ErrorComponent } from './error/error.component';
 import { ConvertisseurComponent } from './convertisseur/convertisseur.component';
 import { ToEuroConvertComponent } from './to-euro-convert/to-euro-convert.component';
 import { ConversionListComponent } from './conversion-list/conversion-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './products/products.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { EditProfuctComponent } from './edit-profuct/edit-profuct.component';
+
 
 @NgModule({
   declarations: [
@@ -65,13 +70,17 @@ import { ConversionListComponent } from './conversion-list/conversion-list.compo
     ErrorComponent,
     ConvertisseurComponent,
     ToEuroConvertComponent,
-    ConversionListComponent
+    ConversionListComponent,
+    ProductsComponent,
+    AddProductComponent,
+    EditProfuctComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,29 @@
+<li class="list-inline-item">
+  <button (click)="toggleAdd()" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip"
+    data-placement="top" title="Add">Add <i class="fa fa-table"></i></button>
+</li>
+<router-outlet></router-outlet>
+<app-add-product (notifyAdd)="sendData($event)" *ngIf="showAdd"></app-add-product>
+
+<ul *ngFor="let item of productList" class="list-group">
+  <li class="list-group-item">Produit {{item.code}} :
+    <div style="float: right;">
+      <!-- Call to action buttons -->
+      <ul class="list-inline m-0">
+
+        <li class="list-inline-item">
+          <a [routerLink]="[item.id]"><button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top"
+            title="Edit"><i class="fa fa-edit"></i></button></a>
+        </li>
+        <li class="list-inline-item">
+          <button (click)="deleteProd(item.id)" class="btn btn-danger btn-sm rounded-0" type="button"
+            data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+        </li>
+      </ul>
+    </div>
+    <caption> Libelle: {{item.libelle}}</caption>
+    <caption> PU: {{item.prixUnitaire}}</caption>
+    <caption> TauxTVA:{{item.tauxTVA}}</caption>
+
+  </li>
+</ul>

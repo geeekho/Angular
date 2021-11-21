@@ -1,0 +1,35 @@
+<form [formGroup]="FGAddPrd" (ngSubmit)="onSubmit()">
+    <!--id Provider-->
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" formControlName="code" class="form-control">
+    </div>
+    <app-error [error]="FGAddPrd.get('code').errors"
+      *ngIf="FGAddPrd.get('code').errors && FGAddPrd.get('code').touched && FGAddPrd.get('code').invalid">
+    </app-error>
+    <!--libelle-->
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input type="text" formControlName="libelle" class="form-control" id="libelle">
+    </div>
+    <app-error [error]="FGAddPrd.get('libelle').errors"
+      *ngIf="FGAddPrd.get('libelle').errors && FGAddPrd.get('libelle').touched && FGAddPrd.get('libelle').invalid">
+    </app-error>
+    <!--prixUnitaire-->
+    <div class="form-group">
+      <label for="prixUnitaire">Prix Unitaire</label>
+      <input type="number" formControlName="prixUnitaire" class="form-control" id="prixUnitaire">
+    </div>
+    <app-error [error]="FGAddPrd.get('prixUnitaire').errors"
+      *ngIf="FGAddPrd.get('prixUnitaire').errors && FGAddPrd.get('prixUnitaire').touched && FGAddPrd.get('prixUnitaire').invalid">
+    </app-error>
+    <!--tauxTVA-->
+    <div class="form-group">
+        <label for="tauxTVA">Taux TVA</label>
+        <input type="number" formControlName="tauxTVA" class="form-control" id="tauxTVA">
+      </div>
+    <app-error [error]="FGAddPrd.get('tauxTVA').errors"
+        *ngIf="FGAddPrd.get('tauxTVA').errors && FGAddPrd.get('tauxTVA').touched && FGAddPrd.get('tauxTVA').invalid">
+    </app-error>
+    <button class="btn btn-primary" [disabled]="FGAddPrd.invalid">Confirm</button>
+</form>

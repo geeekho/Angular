@@ -1,16 +1,20 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements OnInit, OnChanges {
+export class ParentComponent implements OnInit, OnChanges, AfterViewInit {
 
   myVal : string
   val2 : string
+  
 
   constructor() { }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit")
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
   }
@@ -20,6 +24,7 @@ export class ParentComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    console.log("ngOnInit")
   }
 
 

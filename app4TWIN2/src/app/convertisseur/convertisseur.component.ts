@@ -32,7 +32,6 @@ export class ConvertisseurComponent implements OnInit {
   }
 
   storeValue(value: Conversion) {
-    
     console.log(value)
     const found = this.convertedList.find(element =>
        element.montantEURO== value.montantEURO && element.montantTND == value.montantTND);

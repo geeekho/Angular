@@ -18,7 +18,6 @@ export class MainUserComponent implements OnInit {
 
   toggleShow(){
     this.showAdd=!this.showAdd
-
   }
 
 }
